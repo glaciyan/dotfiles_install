@@ -1,5 +1,9 @@
 const fs = require("fs");
 
+const replaceMarker = "# $$-> insert";
+const insertsPath = "./scripts/inserts";
+const outDir = "./out";
+
 function createScript(name) {
     const content = common.replace(
         replaceMarker,
@@ -8,10 +12,6 @@ function createScript(name) {
 
     fs.writeFileSync(`${outDir}/${name}`, content);
 }
-
-const replaceMarker = "# $$-> insert";
-const insertsPath = "./scripts/inserts";
-const outDir = "./out";
 
 const common = fs.readFileSync("./scripts/common.sh").toString();
 
