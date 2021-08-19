@@ -1,13 +1,26 @@
 const fs = require("fs");
 
+function createScript(name) {
+    const content = common.replace(
+        replaceMarker,
+        fs.readFileSync(`${insertsPath}/${name}`)
+    );
+
+    fs.writeFileSync(`${outDir}/${name}`, content);
+}
+
 const replaceMarker = "# $$-> insert";
+const insertsPath = "./scripts/inserts";
+const outDir = "./out";
 
 const common = fs.readFileSync("./scripts/common.sh").toString();
-const linux = common.replace(
-    replaceMarker,
-    fs.readFileSync("./scripts/linux.sh").toString()
-);
-const wsl = common.replace(replaceMarker, fs.readFileSync("./scripts/wsl.sh").toString());
 
-fs.writeFileSync("./out/index", linux);
-fs.writeFileSync("./out/wsl", wsl);
+const inserts = fs.readdirSync(insertsPath);
+
+if (!fs.existsSync("./out")) {
+    fs.mkdirSync("./out");
+}
+
+inserts.forEach((insert) => {
+    createScript(insert);
+});
