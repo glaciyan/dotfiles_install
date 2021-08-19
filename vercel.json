@@ -1,7 +1,6 @@
 {
     "rewrites": [
         { "source": "/", "destination": "/linux.sh" },
-        { "source": "/wsl", "destination": "wsl.sh" },
-        { "source": "/xmonad", "destination": "/xmonad.sh" }
+        { "source": "/wsl", "destination": "wsl.sh" }
     ]
 }
