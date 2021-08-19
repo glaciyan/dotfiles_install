@@ -24,3 +24,5 @@ if (!fs.existsSync("./out")) {
 inserts.forEach((insert) => {
     createScript(insert);
 });
+
+fs.copyFileSync("./scripts/xmonad.sh", `${outDir}/xmonad.sh`);
