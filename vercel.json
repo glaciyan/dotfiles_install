@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+        { "source": "/", "destination": "/linux.sh" },
+        { "source": "/wsl", "destination": "wsl.sh" }
+    ]
+}
