@@ -1,4 +1,4 @@
-sudo apt install libx11-dev libxft-dev libxinerama-dev libxrandr-dev libxss-dev haskell-stack
+sudo apt install libx11-dev libxft-dev libxinerama-dev libxrandr-dev libxss-dev haskell-stack -y
 mkdir -p ~/.config/xmonad && cd ~/.config/xmonad
 echo "import XMonad
 
