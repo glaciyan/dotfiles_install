@@ -1,7 +1,9 @@
-install: `
+[slimetsp/dotfiles](https://github.com/slimetsp/dotfiles)
+
+Install: `
 curl -L df.slimetsp.cc | sh
 `
 
-install wls version: `
+Install for WSL: `
 curl -L df.slimetsp.cc/wsl | sh
 `
