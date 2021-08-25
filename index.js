@@ -24,3 +24,11 @@ if (!fs.existsSync("./out")) {
 inserts.forEach((insert) => {
     createScript(insert);
 });
+
+const variantsPath = "./scripts/variants";
+
+const variants = fs.readdirSync(variantsPath);
+
+variants.forEach((variant) => {
+    fs.copyFileSync(variantsPath + `/${variant}`, `./out/${variant}`);
+});
