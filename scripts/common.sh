@@ -1,37 +1,6 @@
 #!/bin/sh
-# slimetsp dotfile installation script for debian
-echo
-echo
-echo 'Welcome to the'
-echo '-----------------------------------------------------------------------'
-echo -e '\033[1;96m           $$\ $$\                          $$\                         '
-echo -e '\033[1;96m           $$ |\__|                         $$ |                        '
-echo -e '\033[1;96m  $$$$$$$\ $$ |$$\ $$$$$$\$$$$\   $$$$$$\ $$$$$$\    $$$$$$$\  $$$$$$\  '
-echo -e '\033[1;96m $$  _____|$$ |$$ |$$  _$$  _$$\ $$  __$$\\_ $$  _|  $$  _____|$$  __$$\ '
-echo -e '\033[1;96m \$$$$$$\  $$ |$$ |$$ / $$ / $$ |$$$$$$$$ | $$ |    \$$$$$$\  $$ /  $$ |'
-echo -e '\033[1;96m  \____$$\ $$ |$$ |$$ | $$ | $$ |$$   ____| $$ |$$\  \____$$\ $$ |  $$ |'
-echo -e '\033[1;96m $$$$$$$  |$$ |$$ |$$ | $$ | $$ |\$$$$$$$\  \$$$$  |$$$$$$$  |$$$$$$$  |'
-echo -e '\033[1;96m \_______/ \__|\__|\__| \__| \__| \_______|  \____/ \_______/ $$  ____/ '
-echo -e '\033[1;96m                                                              $$ |      '
-echo -e '\033[1;96m                                                              $$ |      '
-echo -e '\033[1;96m                                                              \__|      '
-echo -e '\033[1;95m       $$\            $$\      $$$$$$\  $$\ $$\                     '
-echo -e '\033[1;95m       $$ |           $$ |    $$  __$$\ \__|$$ |                    '
-echo -e '\033[1;95m  $$$$$$$ | $$$$$$\ $$$$$$\   $$ /  \__|$$\ $$ | $$$$$$\   $$$$$$$\ '
-echo -e '\033[1;95m $$  __$$ |$$  __$$\\_ $$  _|  $$$$\     $$ |$$ |$$  __$$\ $$  _____|'
-echo -e '\033[1;95m $$ /  $$ |$$ /  $$ | $$ |    $$  _|    $$ |$$ |$$$$$$$$ |\$$$$$$\  '
-echo -e '\033[1;95m $$ |  $$ |$$ |  $$ | $$ |$$\ $$ |      $$ |$$ |$$   ____| \____$$\ '
-echo -e '\033[1;95m \$$$$$$$ |\$$$$$$  | \$$$$  |$$ |      $$ |$$ |\$$$$$$$\ $$$$$$$  |'
-echo -e '\033[1;95m  \_______| \______/   \____/ \__|      \__|\__| \_______|\_______/ '
-echo -e '\033[1;95m                                                                    '
-echo -e '\033[1;95m                                                                    '
-echo -e '\033[0m                                                                       '
 
-
-# Dependencies
-sudo apt update
-sudo apt install neovim zsh git wget -y
-sudo apt upgrade -y
+echo Installing dotfiles...
 
 # $$-> insert
 
@@ -50,16 +19,6 @@ config config --local status.showUntrackedFiles no
 
 # Create empty .paths file so zsh wont complain
 touch .paths
-
-# Set up node and yarn
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-
-# Create neovim config
-mkdir ~/.config
-mkdir ~/.config/nvim
-echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-source ~/.vimrc" > .config/nvim/init.vim
 
 # End message
 echo '# Self Note'
