@@ -1,4 +1,4 @@
-[slimetsp/dotfiles](https://github.com/slimetsp/dotfiles)
+[glaciyan/dotfiles](https://github.com/glaciyan/dotfiles)
 
 Install: `
 curl -fsSL df.glaciyan.cc | sh
